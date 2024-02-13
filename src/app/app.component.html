@@ -1,3 +1,17 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-content>
+
+    <ion-refresher slot="fixed" mode="ios">
+      <ion-refresher-content/>
+    </ion-refresher>
+    <ion-list>
+      <ion-item>List, pull up to refresh.</ion-item>
+    </ion-list>
+
+    <section style="display: flex;flex-direction: column">
+      <ion-select mode="ios" placeholder="IOS" label="IOS" labelPlacement="stacked" [formControl]="formGroup.controls.ios"></ion-select>
+      <ion-select mode="md" placeholder="MD" [formControl]="formGroup.controls.md" label="MD" labelPlacement="stacked"></ion-select>
+      <ion-button (click)="onVerifyClicked()">Mark all as touched</ion-button>
+    </section>
+  </ion-content>
 </ion-app>
